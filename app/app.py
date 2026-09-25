@@ -9,7 +9,10 @@ st.title("EV Battery Failure Prediction Dashboard")
 st.write("Explore the dataset and see what drives battery failure.")
 
 # Load data
-df = pd.read_csv("../data/ev_battery_failure_clean.csv")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+df = pd.read_csv(BASE_DIR / "data" / "ev_battery_failure.csv")
 
 # Sidebar filter
 st.sidebar.header("Filters")
